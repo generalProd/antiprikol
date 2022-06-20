@@ -1,0 +1,96 @@
+<html>
+<head>
+<title>Try to DDoS me:)</title>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="description" content="Try to DDoS me:)" />
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<script src="audio.js"></script>
+<style>
+h1 {
+    text-align: center;
+    color: white;
+}
+
+body {
+    background-color: black;
+}
+#wheel1
+{
+    position: relative;
+}
+
+.center {
+	text-align: center;
+	font-size: 40px;
+}
+</style>
+<script type="text/javascript">
+function get_random_color() 
+{
+    var r = function () { return Math.floor(Math.random()*256) };
+    return "rgb(" + r() + "," + r() + "," + r() + ")";
+}
+function colorize() {
+	if (document.getElementById('audio_ap').paused) { return; }
+	
+	var last_char = 27;
+	for (var i = 0; i <= last_char; i++) {
+		document.getElementById('char'+i).style.color = get_random_color();
+	}
+}
+
+setInterval(colorize, 10);
+	
+document.addEventListener("DOMContentLoaded", () => {
+    setTimeout(checkPlay, 500);
+});
+	
+function checkPlay ()
+{
+	if (document.getElementById('audio_ap').paused) {
+		if (document.getElementById('wheel1').src.indexOf('shizik_play') === -1) {
+			document.getElementById('wheel1').src = "shizik_play.gif";
+		}
+		document.getElementById('wheel1').className = "";
+		setTimeout(checkPlay, 50);
+	}
+	else {
+		document.getElementById('wheel1').src = "shizik.gif";
+		document.getElementById('wheel1').className = "wheel";
+	}
+	
+}
+	
+	
+	
+</script>
+<!-- Yandex.Metrika counter -->
+<script type="text/javascript" >
+   (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+   m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+   (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+   ym(44599249, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true
+   });
+</script>
+<noscript><div><img src="https://mc.yandex.ru/watch/44599249" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+<!-- /Yandex.Metrika counter -->
+</head>
+<body>
+<h1>@MrEncoder</h1>
+
+</body>
+<p></p>
+<audio id="audio_ap" autoplay loop>
+    <source src="sound.ogg" type="audio/ogg; codecs=vorbis">
+    <source src="sound.mp3" type="audio/mpeg">
+    вы лох
+  </audio>
+<center>
+    <img class="wheel" id="wheel1" src="shizik.gif" />
+</center>
+</body>
+</html>
